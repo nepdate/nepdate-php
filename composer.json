@@ -1,0 +1,60 @@
+{
+  "name": "nepdatejs/nepdate",
+  "description": "Bikram Sambat (BS) ⇄ AD dates for PHP: conversion, arithmetic, formatting, parsing, fiscal year. PHP port of @nepdatejs/core, checked against it by conformance fixtures. Zero dependencies.",
+  "type": "library",
+  "license": "MIT",
+  "readme": "README.md",
+  "keywords": [
+    "nepali",
+    "bikram-sambat",
+    "bs",
+    "nepali-date",
+    "calendar",
+    "fiscal-year",
+    "nepal"
+  ],
+  "homepage": "https://nepdate.github.io/nepdate/integrations/php",
+  "support": {
+    "issues": "https://github.com/nepdate/nepdate/issues",
+    "source": "https://github.com/nepdate/nepdate-php",
+    "docs": "https://nepdate.github.io/nepdate/integrations/php",
+    "security": "https://github.com/nepdate/nepdate/security/policy"
+  },
+  "authors": [
+    {
+      "name": "Shishir Rai"
+    }
+  ],
+  "require": {
+    "php": "^8.3",
+    "ext-json": "*",
+    "ext-mbstring": "*"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.32",
+    "pestphp/pest": "^4.0 || ^5.0",
+    "phpstan/phpstan": "^2.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "NepDate\\": "src/"
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "scripts": {
+    "lint": "pint --test",
+    "format": "pint",
+    "analyse": "phpstan analyse --no-progress",
+    "test": "pest",
+    "verify": [
+      "@lint",
+      "@analyse",
+      "@test"
+    ]
+  }
+}
